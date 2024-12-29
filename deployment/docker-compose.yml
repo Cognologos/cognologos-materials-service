@@ -58,7 +58,7 @@ services:
       - mongodb-data:/data/db
 
     healthcheck: &service_healthcheck
-      test: ["CMD", "mongo", "--eval", "db.runCommand('ping').ok"]
+      test: ["CMD", "mongo", "mongodb://user:password@localhost:27017/user", "--eval", "db.runCommand('ping').ok"]
       interval: 5s
       timeout: 5s
       retries: 5
