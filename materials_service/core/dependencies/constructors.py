@@ -19,7 +19,7 @@ def mongodb_client(mongodb_url: str) -> Generator[AsyncIOMotorClient, None, None
 
 
 async def get_mongodb_database(
-    client: AsyncIOMotorClient, database_name: str = "user"
+    client: AsyncIOMotorClient, database_name: str
 ) -> AsyncGenerator[AsyncIOMotorDatabase, None]:
     db = client[database_name]
     yield db

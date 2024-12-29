@@ -21,7 +21,7 @@ async def db_session(
     request: Request,
     client: Annotated[AsyncIOMotorClient, Depends(db_client_stub)],
 ) -> AsyncGenerator[AsyncIOMotorDatabase, None]:
-    generator = app_depends.get_mongodb_database(client)
+    generator = app_depends.get_mongodb_database(client, "user")
     session = await anext(generator)
     request.state.db = session
 
