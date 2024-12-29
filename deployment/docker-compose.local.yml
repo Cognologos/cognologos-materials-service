@@ -1,14 +1,13 @@
 services:
   db:
-    image: postgres:16-alpine
+    image: mongo:7.0
 
     environment:
-      POSTGRES_USER: user
-      POSTGRES_DB: db
-      POSTGRES_PASSWORD: password
+      MONGO_INITDB_ROOT_USERNAME: user
+      MONGO_INITDB_ROOT_PASSWORD: password
 
     ports:
-      - 127.0.0.1:5432:5432
+      - 127.0.0.1:27017:27017
 
   redis:
     image: redis:7-alpine
