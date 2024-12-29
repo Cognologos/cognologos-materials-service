@@ -16,10 +16,6 @@ format:
 .PHONY: flint
 flint: format lint
 
-.PHONY: migration
-migration:
-	alembic revision --autogenerate
-
 .PHONY: dev-compose
 dev-compose:
 	docker compose -p cognologos-materials-service -f deployment/docker-compose.local.yml up -d --build --remove-orphans
